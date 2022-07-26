@@ -33,19 +33,19 @@ async def cbstart(_, query: CallbackQuery):
                     ],
                 [
                     InlineKeyboardButton("‹ اوامر التشغيل › ", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤️ المطور", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("‹ المطور ›", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "‹ كروب الدعم ›", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "‹ جروب الدعم ›", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "‹ لتنصيب بوتك›", url=f"https://t.me/EITHON1/819"
+                        "‹ قناة السورس ›", url=f"https://t.me/CR_T2"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "ضيـف البـوت لمجمـوعتـك ✅",
+                        "ضيفني لجروبك ➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
@@ -89,10 +89,10 @@ async def cbcmds(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👷🏻 اوامر الادمنيه", callback_data="cbadmin"),
-                    InlineKeyboardButton("🧙🏻 اوامر المطور", callback_data="cbsudo"),
+                    InlineKeyboardButton("‹ اوامر الادمنيه ›", callback_data="cbadmin"),
+                    InlineKeyboardButton("‹ اوامر المطور ›", callback_data="cbsudo"),
                 ],[
-                    InlineKeyboardButton("📚 اوامر اساسيه", callback_data="cbbasic")
+                    InlineKeyboardButton("‹ اوامر اساسيه ›", callback_data="cbbasic")
                 ],[
                     InlineKeyboardButton("🔙 رجوع", callback_data="cbstart")
                 ],
@@ -171,7 +171,7 @@ async def cbsudo(_, query: CallbackQuery):
 async def cbmenu(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 المسؤول الوحيد الذي لديه إذن إدارة الدردشات الصوتية يمكنه النقر على هذا الزر !", show_alert=True)
+        return await query.answer("💡 المشرف الوحيد الذي لديه إذن إدارة الدردشات الصوتية يمكنه النقر على هذا الزر !", show_alert=True)
     chat_id = query.message.chat.id
     user_id = query.message.from_user.id
     buttons = menu_markup(user_id)
@@ -189,5 +189,5 @@ async def cbmenu(_, query: CallbackQuery):
 async def close(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 المسؤول الوحيد الذي لديه إذن إدارة الدردشات الصوتية يمكنه النقر على هذا الزر !", show_alert=True)
+        return await query.answer("💡 المشرف الوحيد الذي لديه إذن إدارة الدردشات الصوتية يمكنه النقر على هذا الزر !", show_alert=True)
     await query.message.delete()
