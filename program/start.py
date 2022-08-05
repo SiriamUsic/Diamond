@@ -63,11 +63,13 @@ async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{BOT_PHOTO}",
         caption=f"""✨ **مرحبا عزيزي » {message.from_user.mention()} !**\n
- **انا بوت استطيع تشغيل الاغاني والموسيقى في المكالمات  الصوتية
+ **⌯ انا بوت استطيع تشغيل الاغاني والموسيقى في المكالمات  الصوتية
 
-᥀︙ لمعرفة اوامر هذا البوت اضغط على » اوامر التشغيل
+⌯  لمعرفة اوامر هذا البوت 
+اضغط على ➠ اوامر التشغيل
 
-᥀︙ لمعرفة طريقة تشغيل هذا البوت اضغط على » طريقة التشغيل
+⌯  لمعرفة طريقة تشغيل هذا البوت 
+اضغط على ➠ طريقة التشغيل
 """,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -84,12 +86,12 @@ async def start_(client: Client, message: Message):
                         "‹ جروب الدعم › ", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "‹ قناة السورس ›", url=f"https://t.me/CR_T2"
+                        "‹ قناة السورس ›", url=f"https://t.me/EITHON1"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "ضيفني لجروبك ➕",
+                        "اضـف البـوت لمجمـوعتـك ➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
@@ -98,37 +100,37 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["مبرمج السورس", f"صلاح حمدان", f"السورس", f"مطور السورس"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["مبرمج السورس", f"صلاح", f"ورس", f"السورس"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/3a62bb9d490376599d0b2.png",
-        caption=f"""Programmer [Diamond](https://t.me/CR_T2)\n⌔ سورس الماس ميوزك\nافضل سورس ميوزك وحمايه بالتليجرام\n تطوير صلاح حمدان \n Programmer [SalahHemdan](https://.me/S_i_r_ia)""",
+        photo=f"https://telegra.ph/file/48e155a1636e3a789b330.jpg",
+        caption=f"""⌯ سورس سوريا [Siria](https://t.me/CR_T2)\n⌯ افضل سورس ميوزك في التليجرام\n⌯ سورس بدون تقطيع او توقف فينصف الاغنيه""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
-                InlineKeyboardButton("SouRce Diamond ", url=f"https://t.me/CR_T2"),
+                InlineKeyboardButton("قناة السورس", url=f"https://t.me/CR_T2"),
             ],
             [
                 InlineKeyboardButton(
-                    "Salah Hemdan", url=f"https://t.me/S_i_r_ia"
+                    "مطور السورس", url=f"https://t.me/BK_ZT"
                 ),
             ],
             [
-                InlineKeyboardButton("ضيفني لجروبك ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                InlineKeyboardButton("اضف البوت الى مجموعتك ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
             ]
          ]
      )
   )
 
-@Client.on_message(command(["صاصا", "المطور"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["سوريا", "المطور"]) & filters.group & ~filters.edited)
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{DEV_PHOTO}",
-        caption=f"""◍ الاول : قناة السورس \n◍ الثاني : هو مطور السورس\n√""",
+        caption=f"""⌯ سورس سوريا ميوزك \n⌯ تابع سورس سوريا""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
-                InlineKeyboardButton("SouRce DiamOnd ", url=f"https://t.me/CR_T2"),
+                InlineKeyboardButton("قناة السورس", url=f"https://t.me/CR_T2"),
             ],
             [
                 InlineKeyboardButton(
@@ -136,7 +138,7 @@ async def help(client: Client, message: Message):
                 ),
             ],
             [
-                InlineKeyboardButton("ضيفني لجروبك ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
             ]
          ]
      )
@@ -153,20 +155,20 @@ async def shadow(c: Client, message: Message):
 @Client.on_message(command(["/ping", f"بينج"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
-    m_reply = await message.reply_text("جاري فحص سرعة النت...")
+    m_reply = await message.reply_text("جاري قياس سرعة النت...")
     delta_ping = time() - start
-    await m_reply.edit_text("📈`سرعة النت`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
+    await m_reply.edit_text("⌯ `البينج`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
 
 
-@Client.on_message(command(["فحص", f"/uptime@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["فحص", f"uptime@{BOT_USERNAME}"]) & ~filters.edited)
 async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        "⌔ حالة البوت :\n"
-        f"• **وقت التشغيل :**\n `{uptime}`\n"
-        f"• **وقت البدء :**\n`{START_TIME_ISO}`"
+        "⌯ حالة البوت :\n"
+        f"• **وقت التشغيل :** `{uptime}`\n"
+        f"• **وقت البدء:** `{START_TIME_ISO}`"
     )
 
 
@@ -194,7 +196,7 @@ async def new_chat(c: Client, m: Message):
         if member.id == bot_id:
             return await m.reply(
                 "❤️ **شكرا لإضافتي إلى المجموعة !**\n\n"
-                "قم بترقيتي مشرف في المجموعة لكي أتمكن من العمل بشكل صحيح\nولا تنسى كتابة `انضم` لدعوة الحساب المساعد\nقم بكتابة`تحديث` لتحديث قائمة المشرفين\n#Salah_Hemdan",
+                "قم بترقيتي كمشرف عن المجموعة لكي أتمكن من العمل بشكل صحيح\nولا تنسى كتابة `انضم` لدعوة الحساب المساعد\nقم بكتابة `تحديث` لتحديث قائمة المشرفين",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -207,7 +209,7 @@ async def new_chat(c: Client, m: Message):
                         ],
                         [
                             InlineKeyboardButton(
-                        "ضيفني لجروبك ➕",
+                        "اضـف الـبـوت لـمـجـمـوعـتـك ➕",
                         url=f'https://t.me/{BOT_USERNAME}?startgroup=true'),
                         ],
                     ]
@@ -232,3 +234,4 @@ async def chat_watcher_func(_, message: Message):
         await message.reply_text(
             f"👮🏼 (> {suspect} <)\n\n**Gbanned** user detected, that user has been gbanned by sudo user and was blocked from this Chat !\n\n🚫 **Reason:** potential spammer and abuser."
         )
+
